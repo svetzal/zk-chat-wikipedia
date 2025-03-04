@@ -2,3 +2,6 @@
 __pycache__
 .idea
 .coverage
+*.egg-info
+*.whl
+*.tar.gz
