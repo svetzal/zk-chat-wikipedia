@@ -41,6 +41,56 @@ print(result.url)  # The Wikipedia URL
 - mojentic
 - wikipedia
 
+## Local Development
+
+To set up this project for local development:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/zk-rag-wikipedia.git
+   cd zk-rag-wikipedia
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
+   ```
+
+3. Install development dependencies:
+   ```bash
+   pip install -r requirements.txt
+   pip install -r dev-requirements.txt
+   ```
+
+4. Install the package in editable mode:
+   ```bash
+   pip install -e .
+   ```
+
+## Building Locally
+
+To build the package locally:
+
+1. Ensure you have the build dependencies:
+   ```bash
+   pip install build
+   ```
+
+2. Build the package:
+   ```bash
+   python -m build
+   ```
+
+This will create both wheel and source distribution in the `dist/` directory.
+
+## Running Tests
+
+To run the tests:
+```bash
+pytest
+```
+
 ## License
 
 MIT License

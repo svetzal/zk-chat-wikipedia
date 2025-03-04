@@ -1,6 +1,6 @@
 [project]
 name = "zk-rag-wikipedia"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
     { name = "Stacey Vetzal", email = "stacey@vetzal.com" }
 ]
@@ -18,8 +18,11 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[project.entry-points."zk-rag.plugins"]
-wikipedia = "wikipedia_content:LookUpTopicOnWikipedia"
+[project.entry-points]
+zk_rag_plugins = { wikipedia = "wikipedia_content:LookUpTopicOnWikipedia" }
+
+[tool.setuptools]
+py-modules = ["wikipedia_content"]
