@@ -6,8 +6,8 @@ from wikipedia_content import LookUpTopicOnWikipedia, WikipediaContentResult
 
 class DescribeWikipediaContentTool:
     @pytest.fixture
-    def tool(self):
-        return LookUpTopicOnWikipedia()
+    def tool(self, tmp_path):
+        return LookUpTopicOnWikipedia(vault=str(tmp_path))
 
     def should_retrieve_article_content_successfully(self, tool):
         with patch('wikipedia.search') as mock_search, \
