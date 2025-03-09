@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional
 
 import wikipedia
@@ -15,7 +16,12 @@ class WikipediaContentResult(BaseModel):
 class LookUpTopicOnWikipedia(LLMTool):
     """Tool for retrieving content from Wikipedia for a given entity."""
 
-    def run(self, topic: str) -> WikipediaContentResult:
+    def __init__(self, vault: str):
+        """Initialize the tool with an optional gateway."""
+        super().__init__()
+        self.vault = vault
+
+    def run(self, topic: str) -> str:
         try:
             # Search for the page
             search_results = wikipedia.search(topic)
