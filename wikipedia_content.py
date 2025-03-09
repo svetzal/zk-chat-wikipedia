@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Optional
 
 import wikipedia
+from mojentic.llm import LLMBroker
 from mojentic.llm.tools.llm_tool import LLMTool
 from pydantic import BaseModel
 from wikipedia import DisambiguationError
@@ -16,7 +17,7 @@ class WikipediaContentResult(BaseModel):
 class LookUpTopicOnWikipedia(LLMTool):
     """Tool for retrieving content from Wikipedia for a given entity."""
 
-    def __init__(self, vault: str):
+    def __init__(self, vault: str, llm: LLMBroker):
         """Initialize the tool with an optional gateway."""
         super().__init__()
         self.vault = vault
