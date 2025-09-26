@@ -1,10 +1,10 @@
 [project]
-name = "zk-rag-wikipedia"
-version = "1.1.0"
+name = "zk-chat-wikipedia"
+version = "2.0.0"
 authors = [
     { name = "Stacey Vetzal", email = "stacey@vetzal.com" }
 ]
-description = "Tool plugin for zk-rag to search Wikipedia"
+description = "Tool plugin for zk-chat to search Wikipedia"
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
@@ -13,7 +13,7 @@ classifiers = [
     'Operating System :: OS Independent',
 ]
 dependencies = [
-    "mojentic>=0.2.5",
+    "mojentic>=0.6.1",
     "wikipedia>=1.4.0",
 ]
 

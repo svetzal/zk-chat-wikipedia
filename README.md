@@ -1,6 +1,6 @@
-# zk-rag-wikipedia Plugin
+# zk-chat-wikipedia Plugin
 
-A plugin for zk-rag that enables Wikipedia content lookup functionality.
+A plugin for zk-chat that enables Wikipedia content lookup functionality.
 
 ## Description
 
@@ -16,14 +16,14 @@ This plugin provides a tool to search and retrieve content from Wikipedia articl
 ## Installation
 
 ```bash
-pip install zk-rag-wikipedia
+pip install zk-chat-wikipedia
 ```
 
 ## Usage
 
-The plugin will be automatically discovered by zk-rag when installed. It provides the `LookUpTopicOnWikipedia` tool which can be used to retrieve information about specific topics from Wikipedia.
+The plugin will be automatically discovered by zk-chat when installed. It provides the `LookUpTopicOnWikipedia` tool which can be used to retrieve information about specific topics from Wikipedia.
 
-Example usage through zk-rag:
+Example usage through zk-chat:
 
 ```python
 from zk_rag import get_tool
@@ -47,8 +47,8 @@ To set up this project for local development:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/zk-rag-wikipedia.git
-   cd zk-rag-wikipedia
+   git clone https://github.com/yourusername/zk-chat-wikipedia.git
+   cd zk-chat-wikipedia
    ```
 
 2. Create and activate a virtual environment:
