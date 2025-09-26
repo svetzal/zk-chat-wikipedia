@@ -1,13 +1,22 @@
 import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch, MagicMock, Mock
 from wikipedia.exceptions import DisambiguationError
 from wikipedia_content import LookUpTopicOnWikipedia, WikipediaContentResult
+
+# Mock ServiceProvider since we don't have access to the actual zk_chat.services
+try:
+    from zk_chat.services import ServiceProvider
+except ImportError:
+    # Create a mock ServiceProvider class for testing
+    class ServiceProvider:
+        pass
 
 
 class DescribeWikipediaContentTool:
     @pytest.fixture
     def tool(self, tmp_path, mocker):
-        return LookUpTopicOnWikipedia(vault=str(tmp_path), llm=mocker.MagicMock())
+        mock_service_provider = Mock(spec=ServiceProvider)
+        return LookUpTopicOnWikipedia(mock_service_provider)
 
     def should_retrieve_article_content_successfully(self, tool):
         with patch('wikipedia.search') as mock_search, \
