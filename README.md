@@ -57,15 +57,9 @@ To set up this project for local development:
    source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
    ```
 
-3. Install development dependencies:
+3. Install the package with development dependencies:
    ```bash
-   pip install -r requirements.txt
-   pip install -r dev-requirements.txt
-   ```
-
-4. Install the package in editable mode:
-   ```bash
-   pip install -e .
+   pip install -e .[dev]
    ```
 
 ## Building Locally
