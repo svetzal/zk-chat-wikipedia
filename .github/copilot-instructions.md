@@ -138,14 +138,14 @@ def run(self, topic: str) -> str:
             content="Error: topic parameter is required",
             url=None
         ).model_dump()
-    
+
     if not topic.strip():
         return WikipediaContentResult(
-            title="Error", 
+            title="Error",
             content="Error: topic cannot be empty",
             url=None
         ).model_dump()
-    
+
     # Continue with plugin logic...
 ```
 
@@ -193,12 +193,12 @@ Check service availability when using optional services:
 def check_services(self):
     """Check what services are available."""
     provider = self.service_provider
-    
+
     # Most services should be available, but check optional ones
     if provider.has_service(ServiceType.GIT_GATEWAY):
         git = provider.get_git_gateway()
         # Git operations are available
-    
+
     # For required services, use require_service
     try:
         config = provider.require_service(ServiceType.CONFIG)
@@ -217,8 +217,8 @@ from zk_chat.services import ServiceProvider, ServiceType
 def __init__(self, service_provider: ServiceProvider):
     super().__init__()
     self.service_provider = service_provider
-    
-    # Access services through convenient methods  
+
+    # Access services through convenient methods
     config = service_provider.get_config()
     llm = service_provider.get_llm_broker()
     # Note: Wikipedia plugin typically doesn't need vault access
